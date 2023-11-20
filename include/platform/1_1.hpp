@@ -9,8 +9,8 @@ static constexpr bool LedPowerOnLevel = 1;
 
 namespace Pins {
 
-static constexpr gpio_num_t Display = GPIO_NUM_23;
-static constexpr gpio_num_t Status = GPIO_NUM_21;
+static constexpr gpio_num_t Display = GPIO_NUM_13;
+static constexpr gpio_num_t Status = GPIO_NUM_12;
 
 } // namespace Pins
 
