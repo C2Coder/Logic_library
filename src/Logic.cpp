@@ -20,22 +20,12 @@ Logic& IRAM_ATTR Logic::singleton() {
 
 void Logic::init() {
     gpio_config_t configData = {
-        .pin_bit_mask = 1ULL << Platform::Pins::LedPower,
         .mode = GPIO_MODE_OUTPUT,
         .pull_up_en = GPIO_PULLUP_DISABLE,
         .pull_down_en = GPIO_PULLDOWN_DISABLE,
         .intr_type = GPIO_INTR_DISABLE,
     };
     gpio_config(&configData);
-    m_buttons.init();
-}
-
-void Logic::turnOnLeds() {
-    gpio_set_level(Platform::Pins::LedPower, Platform::LedPowerOnLevel);
-}
-
-void Logic::turnOffLeds() {
-    gpio_set_level(Platform::Pins::LedPower, !Platform::LedPowerOnLevel);
 }
 
 StatusBar& Logic::statusBar() {
@@ -46,14 +36,6 @@ Display& Logic::display() {
     return m_display;
 }
 
-Buttons& Logic::buttons() {
-    return m_buttons;
-}
-
-Buzzer& Logic::buzzer() {
-    return m_buzzer;
-}
-
 Nvs& Logic::nvs() {
     static Nvs instance("LogicLib");
     return instance;
@@ -62,8 +44,6 @@ Nvs& Logic::nvs() {
 Logic& logic = Logic::singleton();
 Display& display = logic.display();
 StatusBar& statusBar = logic.statusBar();
-Buttons& buttons = logic.buttons();
-Buzzer& buzzer = logic.buzzer();
 
 extern void logicMain();
 

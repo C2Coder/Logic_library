@@ -1,8 +1,6 @@
 #pragma once
 
 #include "ArduinoLikeUtils.hpp"
-#include "Buttons.hpp"
-#include "Buzzer.hpp"
 #include "Display.hpp"
 #include "Nvs.hpp"
 #include "Platform.hpp"
@@ -20,8 +18,6 @@ private:
 
     Display m_display;
     StatusBar m_statusBar;
-    Buttons m_buttons;
-    Buzzer m_buzzer;
 
     Logic();
 
@@ -41,8 +37,6 @@ public:
 
     Display& display();
     StatusBar& statusBar();
-    Buttons& buttons();
-    Buzzer& buzzer();
     Nvs& nvs();
 };
 
@@ -51,5 +45,3 @@ void logicMain();
 extern Logic& logic;
 extern Display& display;
 extern StatusBar& statusBar;
-extern Buttons& buttons;
-extern Buzzer& buzzer;

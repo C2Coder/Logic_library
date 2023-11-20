@@ -25,15 +25,6 @@ inline void waitSeconds(float seconds) {
 }
 
 /**
- * @brief Čeká po specifikovaný počet vteřin
- *
- * @param vteriny Kolik vteřin se má čekat
- */
-inline void cekejVteriny(float vteriny) {
-    waitSeconds(vteriny);
-}
-
-/**
  * @brief Returns time since boot in milliseconds
  *
  * @return uint32_t number of milliseconds since boot
@@ -49,15 +40,6 @@ inline uint32_t millis() {
  */
 inline float seconds() {
     return float(millis()) / 1000.f;
-}
-
-/**
- * @brief Vrátí počet vteřin od začátku programu
- *
- * @return float počet vteřin od začátku programu
- */
-inline float vteriny() {
-    return seconds();
 }
 
 /**
@@ -99,27 +81,6 @@ inline long random(long min, long max) {
     }
     long diff = max - min;
     return random(diff) + min;
-}
-
-/**
- * @brief Vrátí náhodné číslo od 0 do maximum
- *
- * @param maximum maximální číslo, které můžu dostat
- * @return long Náhodné číso
- */
-inline long nahodne(long maximum) {
-    return random(maximum);
-}
-
-/**
- * @brief Vrátí náhodné číslo od minima do maximum
- *
- * @param minimum minimální číslo, které můžu dostat
- * @param maximum maximální číslo, které můžu dostat
- * @return long Náhodné číso
- */
-inline long nahodne(long minimum, long maximum) {
-    return random(minimum, maximum);
 }
 
 /**
