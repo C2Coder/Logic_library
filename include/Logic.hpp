@@ -30,8 +30,6 @@ public:
     static Logic& IRAM_ATTR singleton();
 
     void init();
-    void turnOnLeds();
-    void turnOffLeds();
 
     ~Logic() = default;
 

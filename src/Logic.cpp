@@ -56,7 +56,6 @@ extern "C" {
     // We can't feasibly change SmartLeds's core because it is initialized
     // via global constructors, but WiFi core is set to 1 via sdkconfig.* files.
     // CONFIG_ESP32_WIFI_TASK_PINNED_TO_CORE_1
-    logic.turnOnLeds();
 
     logicMain();
 
